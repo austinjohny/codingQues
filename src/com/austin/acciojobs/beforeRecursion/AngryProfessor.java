@@ -44,5 +44,29 @@ Constraints
 
 package com.austin.acciojobs.beforeRecursion;
 
+import java.util.Scanner;
+
 public class AngryProfessor {
+
+    public static String classOrNot(int[] arr,int k){
+        int count = 0;
+        for(int i:arr){
+            if(i<=0)
+                count++;
+        }
+        if(count >= k)
+            return "NO";
+        return "YES";
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(),k = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i < n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(classOrNot(arr,k));
+    }
+
 }

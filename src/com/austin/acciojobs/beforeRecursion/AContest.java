@@ -42,5 +42,26 @@ Constraints
 
 package com.austin.acciojobs.beforeRecursion;
 
+import java.util.Scanner;
+
 public class AContest {
+
+    public static int qualifiedContestent(int[] arr,int k){
+        int count = 0;
+        for(int val:arr){
+            if(val >= arr[k-1] && val > 0)
+                count++;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(),k = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i = 0;i < n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(qualifiedContestent(arr,k));
+    }
 }
